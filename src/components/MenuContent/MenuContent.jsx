@@ -21,6 +21,11 @@ const MenuContent = ({ setIsMenuOpen, isMenuOpen }) => {
         setIsMenuOpen(!isMenuOpen)
     }
 
+    const partnershipsPage = ()=>{
+        navigate('/partnerships')
+        setIsMenuOpen(!isMenuOpen)
+    }
+
     useEffect(() => {
         const wow = new WOW.WOW();
         wow.init();
@@ -32,7 +37,7 @@ const MenuContent = ({ setIsMenuOpen, isMenuOpen }) => {
                     <HighlightOffIcon onClick={toggle} style={{ fontSize: '55px', cursor: 'pointer' }} />
                     <h1 onClick={transferPage}>About</h1>
                     <h1 onClick={peoplePage}>People</h1>
-                    <h1>Partnerships</h1>
+                    <h1 onClick={partnershipsPage}>Partnerships</h1>
                     <h2>Our History</h2>
                 </div>
             </div>}

@@ -1,0 +1,47 @@
+.partnershipsPage {
+  padding: 100px 0;
+}
+
+.container-partnerships {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.partnershipsPage h1 {
+  font-size: 40px;
+  font-weight: 300;
+  margin: 50px 0;
+  text-align: center;
+}
+
+.grid-image {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 35px;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .grid-image {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .grid-image img{
+    margin: 25px 0;
+  }
+}
+
+@media only screen and (min-width: 600px) and  (max-width: 768px) {
+  .grid-image {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media only screen and (min-width: 769px) and  (max-width: 935px) {
+    .grid-image {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  

@@ -56,7 +56,8 @@
   content: "";
   position: absolute;
   bottom: -50px;
-  left: 41%;
+  left: 300px;
+  /* left: 41%; */
   width: 150px;
   height: 1px;
   background-color: #000;
@@ -65,5 +66,19 @@
 @media only screen and (max-width: 768px) {
   .container {
     padding: 25px;
+    /* background-color: red; */
+  }
+  .about{
+    padding: 50px 0;
+  }
+
+  .about .lastOne::after {
+    left: 100px;
+    /* left: 41%; */
+
+  }
+
+  .container p::before {
+    left: 100px;
   }
 }

@@ -7,6 +7,7 @@ import NotFound from "./components/NotFound/NotFound";
 import About from "./components/About/About";
 import HomePage from "./components/HomePage/HomePage";
 import People from './components/People/People'
+import Partnerships from "./components/Partnerships/Partnerships";
 function App() {
   const faviconUrl = logo;
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/people" element={<People />} />
           <Route exact path="/about" element={<About />} />
+          <Route exact path="/partnerships" element={<Partnerships />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

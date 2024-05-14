@@ -72,7 +72,7 @@ const About = () => {
                     </div>
 
                     <div className='main-container' style={{ textAlign: 'center', marginTop: '75px' }}>
-                        <div className='container'>
+                        <div className=''>
                             <h1>OUR VALUES</h1>
 
                         </div>

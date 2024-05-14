@@ -18,17 +18,14 @@ const Navbar = () => {
   };
 
   const handleClick = () => {
-    // Execute both toggleMenu and navigate('/') when clicked
     setIsMenuOpen(false)
     navigate('/');
     console.log('handleClick');
   };
 
   useEffect(() => {
-
     const wow = new WOW.WOW();
     wow.init();
-
   }, [])
 
   return (
@@ -45,9 +42,12 @@ const Navbar = () => {
           </div>
         </Container>
       </div>
-      {isMenuOpen && <div>
-        <MenuContent setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
-      </div>}
+      {isMenuOpen && (
+  <div style={{ position: 'absolute', zIndex: 1100 , width:'100%' }}>
+    <MenuContent setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
+  </div>
+)}
+
     </div>
   );
 };

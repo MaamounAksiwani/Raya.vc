@@ -17,6 +17,7 @@ const People = () => {
         { id: 4, title: 'Card 4', imageUrl: 'https://images.pexels.com/photos/15004155/pexels-photo-15004155/free-photo-of-portrait-of-a-man-with-a-stubble.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
         { id: 5, title: 'Card 5', imageUrl: 'https://images.pexels.com/photos/18199741/pexels-photo-18199741/free-photo-of-portrait-of-a-black-man.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
         { id: 6, title: 'Card 6', imageUrl: 'https://images.pexels.com/photos/9607118/pexels-photo-9607118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+        { id: 7, title: 'Card 1', imageUrl: 'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
     ];
     return (
         <div className='main-people'>
@@ -31,10 +32,14 @@ const People = () => {
                             <div key={card.id} className="card">
                                 <img className="card-image" src={card.imageUrl} alt={card.title} />
                                 <div className="card-overlay">
-                                    {/* <h2>{card.title}</h2> */}
+                                    <div className="card-title">
+                                        <h2>{card.title}</h2>
+                                        <p>NAME</p>
+                                    </div>
                                 </div>
                             </div>
                         ))}
+
                     </div>
                 </div>
 
