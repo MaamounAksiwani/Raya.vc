@@ -8,7 +8,7 @@ const NotFound = () => {
         window.scrollTo(0, 0)
     }, [])
     return (
-        <div style={{ padding: '100px 0' , backgroundColor:'#eee' , height:'100vh' }} className='wow fadeInDown' data-wow-duration='1s'>
+        <div style={{ padding: '100px 0' , backgroundColor:'#eee' , height:'100vh' }} className='wow fadeInDown' data-wow-duration='1.5s'>
             <Container maxWidth="lg">
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
                     <div>
