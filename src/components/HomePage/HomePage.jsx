@@ -1,13 +1,21 @@
 import React from 'react';
 import './HomePage.css';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 const HomePage = () => {
-
     return (
-        <div className='homePage'>
-            <h1>HomePage</h1>
+        <>
+            <div className="background">
+                <div className="overlay"></div>
 
-        </div>
-
+                <div className="centered-text">
+                    <h1>MAKE HISTORY</h1>
+                </div>
+                <div className="bottom-text">
+                    <ArrowDownwardIcon className='arrow' />
+                </div>
+            </div>
+            <h1>HELLo</h1>
+        </>
     );
 };
 
