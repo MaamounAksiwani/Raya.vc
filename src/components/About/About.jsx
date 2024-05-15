@@ -6,6 +6,7 @@ const About = () => {
     useEffect(() => {
         const wow = new WOW.WOW();
         wow.init();
+        window.scrollTo(0, 0)
       }, []);
 
     return (
