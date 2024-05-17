@@ -4,8 +4,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* margin: 10px 0; */
+
   }
-  
+  .other{
+    /* padding-top: 50px !important; */
+    /* background-color: red; */
+  }
   .content {
     display: flex;
     flex-direction: column;

@@ -5,7 +5,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const SecondSection = () => {
     return (
-        <div className='main-first-section'>
+        <div className='main-first-section other'>
             <Container maxWidth="xl">
                 <div className='content'>
                     <div className='text-container'>

@@ -1,97 +1,93 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './HomePage.css';
-import WOW from 'wowjs';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import fullpage from 'fullpage.js';
 import FirstSection from '../FirstSection/FirstSection';
-import Box from '@mui/material/Box';
-import LinearProgress from '@mui/material/LinearProgress';
 import SecondSection from '../SecondSection/SecondSection';
 import ThirdSection from '../ThirdSection/ThirdSection';
-import FourthSection from '../FourthSection/FourthSection'; // Import FourthSection
-import { Container } from '@mui/material';
+import FourthSection from '../FourthSection/FourthSection';
 
 const HomePage = () => {
-    const headerRef = useRef(null);
-    const secondSectionRef = useRef(null);
-    const thirdSectionRef = useRef(null);
-    const fourthSectionRef = useRef(null); // Reference for FourthSection
-    const [autoScrollInterval, setAutoScrollInterval] = useState(null);
+    const fullpageRef = useRef(null);
+    const [isAutoScrolling, setIsAutoScrolling] = useState(true);
+    let intervalId;
 
     useEffect(() => {
-        const wow = new WOW.WOW();
-        wow.init();
-        window.scrollTo(0, 0);
-    }, []);
+        const fullpageInstance = new fullpage('#fullpage', {
+            sectionSelector: '.section',
+            scrollingSpeed: 1000, // Set scrolling speed to 1 second (1000 milliseconds)
+            touchSensitivity: 15,
+            credits: { enabled: false},
+            navigation: false,
 
-    const handleArrowClick = () => {
-        headerRef.current?.scrollIntoView({
-            behavior: 'smooth'
+            afterLoad: (origin, destination, direction) => {
+                // Check if auto-scrolling is enabled and user has scrolled up
+                // if (isAutoScrolling && direction === 'up') {
+                //     // Disable auto-scrolling
+                //     setIsAutoScrolling(false);
+                // }
+            },
         });
 
-        // Start auto scroll after 5 seconds
-        const interval = setTimeout(() => {
-            secondSectionRef.current?.scrollIntoView({
-                behavior: 'smooth'
-            });
+        // Assign fullPage.js API to the ref
+        fullpageRef.current = fullpageInstance;
 
-            // Scroll to third section after another 5 seconds
-            setAutoScrollInterval(setTimeout(() => {
-                thirdSectionRef.current?.scrollIntoView({
-                    behavior: 'smooth'
-                });
+        // Start the interval when component mounts
+        startInterval();
 
-                // Scroll to fourth section after third section is scrolled to
-                setAutoScrollInterval(setTimeout(() => {
-                    fourthSectionRef.current?.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }, 5000));
-            }, 5000));
-        }, 5000);
-
-        // Clear interval on unmount or when scrolled manually
+        // Clean up by destroying fullpage instance and clearing the interval
         return () => {
-            clearTimeout(interval);
-            clearTimeout(autoScrollInterval);
+            fullpageInstance.destroy('all');
+            clearInterval(intervalId);
         };
+    }, [isAutoScrolling]);
+
+    const moveNextSection = () => {
+        if (fullpageRef.current) {
+            fullpageRef.current.moveSectionDown();
+        }
+    };
+
+    const startInterval = () => {
+        // Move to the next section every 5 seconds if auto-scrolling is enabled
+        intervalId = setInterval(() => {
+            if (isAutoScrolling && fullpageRef.current) {
+                fullpageRef.current.moveSectionDown();
+            }
+        }, 5000);
     };
 
     return (
-        <div className='wow fadeInDown' data-wow-duration='1.5s'>
-            <div className="background">
-                <div className="overlay"></div>
-                <div className="centered-text">
-                    <h1>MAKE THE HISTORY</h1>
-                </div>
-                <div className="bottom-text">
-                    <ArrowDownwardIcon
-                        className='arrow'
-                        style={{ fontSize: '30px', border: '1px solid #000', borderRadius: '50%', padding: '2px' }}
-                        onClick={handleArrowClick}
-                    />
+        <div id='fullpage'>
+            <div className='section'>
+                <div className="background">
+                    <div className="overlay"></div>
+                    <div className="centered-text">
+                        <h1>MAKE THE HISTORY</h1>
+                    </div>
+                    <div className="bottom-text">
+                        <ArrowDownwardIcon
+                            className='arrow'
+                            style={{ fontSize: '30px', border: '1px solid #000', marginBottom:'30px', borderRadius: '50%', padding: '2px' }}
+                            onClick={moveNextSection}
+                        />
+                    </div>
                 </div>
             </div>
 
-
-
-            <div ref={headerRef} id='FirstSection'>
+            <div className='section'>
                 <FirstSection />
             </div>
 
-
-            {/* <Container maxWidth='xl'>
-                <Box sx={{ width: '100%' }}>
-                    <LinearProgress />
-                </Box>
-            </Container> */}
-
-            <div ref={secondSectionRef} id='SecondSection'>
+            <div className='section'>
                 <SecondSection />
             </div>
-            <div ref={thirdSectionRef} id='ThirdSection'>
+
+            <div className='section'>
                 <ThirdSection />
             </div>
-            <div ref={fourthSectionRef} id='FourthSection'>
+
+            <div className='section'>
                 <FourthSection />
             </div>
         </div>
@@ -99,3 +95,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+
