@@ -48,15 +48,15 @@
 .box-content {
   margin: 40px 0;
 }
-.about .lastOne {
+.lastOne {
   position: relative;
 }
 
-.about .lastOne::after {
+ .lastOne::after {
   content: "";
   position: absolute;
   bottom: -50px;
-  left: 300px;
+  left: 350px;
   /* left: 41%; */
   width: 150px;
   height: 1px;
@@ -73,7 +73,7 @@
   }
 
   .about .lastOne::after {
-    left: 100px;
+    left: 15px;
     /* left: 41%; */
 
   }

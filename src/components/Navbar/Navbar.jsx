@@ -11,10 +11,19 @@ import { useNavigate } from 'react-router';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const [animationClass, setAnimationClass] = useState('bounceInDown');
 
 
   const toggleMenu = () => {
-    setIsMenuOpen(prevState => !prevState);
+    if (isMenuOpen) {
+      setAnimationClass('bounceOutUp');
+      setTimeout(() => {
+        setIsMenuOpen(false);
+      }, 2000);
+    } else {
+      setIsMenuOpen(true);
+      setAnimationClass('bounceInDown');
+    }
   };
 
   const handleClick = () => {
@@ -43,16 +52,25 @@ const Navbar = () => {
         </Container>
       </div>
       {isMenuOpen && (
-  <div style={{ position: 'absolute', zIndex: 1100 , width:'100%' }}>
-    <MenuContent setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
-  </div>
-)}
+        // osition: 'absolute', zIndex: 1100, width: '100%'
+        <div>
+          <MenuContent
+            setIsMenuOpen={setIsMenuOpen}
+            isMenuOpen={isMenuOpen}
+            animationClass={animationClass}
+            setAnimationClass={setAnimationClass}
+            toggleMenu={toggleMenu}
+          />
+        </div>
+      )}
 
     </div>
   );
 };
 
 export default Navbar;
+
+
 
 
 

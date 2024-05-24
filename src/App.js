@@ -8,6 +8,8 @@ import About from "./components/About/About";
 import HomePage from "./components/HomePage/HomePage";
 import People from './components/People/People'
 import Partnerships from "./components/Partnerships/Partnerships";
+import History from "./components/History/History";
+import ThirdBYID from "./components/ThirdSection/ThirdBYID";
 function App() {
   const faviconUrl = logo;
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/people" element={<People />} />
           <Route exact path="/about" element={<About />} />
+          <Route exact path='/history' element={<History/>}/>
+          <Route exact path='/ThirdBYID' element={<ThirdBYID/>} /> 
           <Route exact path="/partnerships" element={<Partnerships />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

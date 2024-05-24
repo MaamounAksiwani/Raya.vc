@@ -1,13 +1,21 @@
-.homePage {
-  /* padding: 100px 0; */
-}
 
 .background {
-  background-image: url("../../until/background.jpg");
-  background-size: cover;
-  height: 100vh;
   position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
+
+.hero__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
 
 .overlay {
   position: absolute;
@@ -37,15 +45,14 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  color: white; /* Text color */
+  color: white; 
 }
 .arrow {
   color: #000;
   font-size: 220px;
   cursor: pointer;
 }
-
- .section {
-  /* height: 100vh; */
+.section:nth-child(2){
+  /* background-color: red; */
 }
 

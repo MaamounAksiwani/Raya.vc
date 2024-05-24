@@ -1,0 +1,39 @@
+.history-container {
+  padding-top: 100px;
+}
+.history-container h1 {
+  font-size: 40px;
+  font-weight: 300;
+}
+.history-container h2{
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.history-container p {
+    font-weight: 200;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+ .images {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+ .images img {
+  width: 208px;
+  margin: 25px 0;
+  height: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+   .images {
+    flex-direction: column;
+    justify-content: center;
+  }
+}

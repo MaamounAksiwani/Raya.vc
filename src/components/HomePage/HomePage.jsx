@@ -4,6 +4,8 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import fullpage from 'fullpage.js';
 import FirstSection from '../FirstSection/FirstSection';
 import SecondSection from '../SecondSection/SecondSection';
+import WOW from 'wowjs';
+
 import ThirdSection from '../ThirdSection/ThirdSection';
 import FourthSection from '../FourthSection/FourthSection';
 
@@ -17,7 +19,7 @@ const HomePage = () => {
             sectionSelector: '.section',
             scrollingSpeed: 1000, // Set scrolling speed to 1 second (1000 milliseconds)
             touchSensitivity: 15,
-            credits: { enabled: false},
+            credits: { enabled: false },
             navigation: false,
 
             afterLoad: (origin, destination, direction) => {
@@ -29,13 +31,8 @@ const HomePage = () => {
             },
         });
 
-        // Assign fullPage.js API to the ref
         fullpageRef.current = fullpageInstance;
-
-        // Start the interval when component mounts
         startInterval();
-
-        // Clean up by destroying fullpage instance and clearing the interval
         return () => {
             fullpageInstance.destroy('all');
             clearInterval(intervalId);
@@ -49,18 +46,26 @@ const HomePage = () => {
     };
 
     const startInterval = () => {
-        // Move to the next section every 5 seconds if auto-scrolling is enabled
         intervalId = setInterval(() => {
             if (isAutoScrolling && fullpageRef.current) {
                 fullpageRef.current.moveSectionDown();
             }
-        }, 5000);
-    };
+        }, 10000);
 
+
+    };
+    useEffect(() => {
+        const wow = new WOW.WOW();
+        wow.init();
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <div id='fullpage'>
             <div className='section'>
                 <div className="background">
+                    <video data-keepplaying="true" playsinline="" autoplay="" loop muted class="show hero__video hero__background-video hero__height">
+                        <source src="https://cdn.sanity.io/files/ti7si9cx/production/062ad65624568ca35aa36ed0abbaa5d072d678a1.mp4" type="video/mp4" />
+                    </video>
                     <div className="overlay"></div>
                     <div className="centered-text">
                         <h1>MAKE THE HISTORY</h1>
@@ -68,12 +73,13 @@ const HomePage = () => {
                     <div className="bottom-text">
                         <ArrowDownwardIcon
                             className='arrow'
-                            style={{ fontSize: '30px', border: '1px solid #000', marginBottom:'30px', borderRadius: '50%', padding: '2px' }}
+                            style={{ fontSize: '30px', border: '1px solid #000', marginBottom: '30px', borderRadius: '50%', padding: '2px' }}
                             onClick={moveNextSection}
                         />
                     </div>
                 </div>
             </div>
+
 
             <div className='section'>
                 <FirstSection />
