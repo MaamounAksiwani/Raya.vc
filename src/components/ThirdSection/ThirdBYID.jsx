@@ -13,7 +13,7 @@ const ThirdBYID = () => {
     }, []);
     return (
         <div className='about byID wow fadeInDown' data-wow-duration='1.5s'>
-            <div className='main-container' style={{ textAlign: 'center', paddingBottom: '25px' }}>
+            <div className='main-container' style={{ textAlign: 'center' }}>
                 <div className='container'>
                     <h2>DoorDash: delivering the future of local</h2>
                     <p>

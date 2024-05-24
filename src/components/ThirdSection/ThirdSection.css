@@ -41,7 +41,8 @@
   }
 
   .byID{
-    height: 100vh;
+    background-color: #EEEEEE;
+    /* height: 100vh; */
   }
   @media only screen and (min-width: 768px) {
     .content {

@@ -26,16 +26,15 @@ const People = () => {
 
                 <div className='wow fadeInDown' data-wow-duration='1.5s'>
                     <h1>SHAPING HISTORY TOGETHER</h1>
-
                     <div className="card-container">
                         {cardData.map((card) => (
                             <div key={card.id} className="card">
                                 <img className="card-image" src={card.imageUrl} alt={card.title} />
                                 <div className="card-overlay">
-                                    <div className="card-title">
-                                        <h2>{card.title}</h2>
-                                        <p>NAME</p>
-                                    </div>
+                                </div>
+                                <div className="card-title">
+                                    <h2>Title</h2>
+                                    <p>NAME</p>
                                 </div>
                             </div>
                         ))}

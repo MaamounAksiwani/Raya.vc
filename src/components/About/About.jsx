@@ -63,7 +63,7 @@ const About = () => {
                         </span>
                     </div>
 
-                    <div className='box-content lastOne'>
+                    <div className='box-content'>
                         <h2>Winning as a mindset
                         </h2>
                         <span>
