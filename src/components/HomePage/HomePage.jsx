@@ -17,10 +17,12 @@ const HomePage = () => {
     useEffect(() => {
         const fullpageInstance = new fullpage('#fullpage', {
             sectionSelector: '.section',
+            scrollBar: false,
             scrollingSpeed: 1000, // Set scrolling speed to 1 second (1000 milliseconds)
             touchSensitivity: 15,
             credits: { enabled: false },
             navigation: false,
+            
 
             afterLoad: (origin, destination, direction) => {
                 // Check if auto-scrolling is enabled and user has scrolled up
@@ -54,12 +56,15 @@ const HomePage = () => {
 
 
     };
+
     useEffect(() => {
         const wow = new WOW.WOW();
         wow.init();
         window.scrollTo(0, 0)
     }, [])
+
     return (
+        <>
         <div id='fullpage'>
             <div className='section'>
                 <div className="background">
@@ -68,7 +73,7 @@ const HomePage = () => {
                     </video>
                     <div className="overlay"></div>
                     <div className="centered-text">
-                        <h1>MAKE THE HISTORY</h1>
+                        <h1>MAKE HISTORY</h1>
                     </div>
                     <div className="bottom-text">
                         <ArrowDownwardIcon
@@ -81,15 +86,15 @@ const HomePage = () => {
             </div>
 
 
-            <div className='section'>
+            <div class="section" data-percentage="80" data-centered="true">
                 <FirstSection />
             </div>
 
-            <div className='section'>
+            <div class="section" data-percentage="80" data-centered="true">
                 <SecondSection />
             </div>
 
-            <div className='section'>
+            <div class="section" data-percentage="80" data-centered="true">
                 <ThirdSection />
             </div>
 
@@ -97,6 +102,8 @@ const HomePage = () => {
                 <FourthSection />
             </div>
         </div>
+
+        </>
     );
 };
 

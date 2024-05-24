@@ -2,12 +2,23 @@ import React, { useState, useEffect } from 'react';
 import './FirstSection.css';
 import { Container } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
+import { styled } from '@mui/system';
 
 import { useNavigate } from 'react-router';
 
-const FirstSection = () => {
+const BlackLinearProgress = styled(LinearProgress)(({ theme }) => ({
+    '& .MuiLinearProgress-bar': {
+      backgroundColor: 'black',
+    },
+  }));
 
-    const [isVisible, setIsVisible] = useState(true);
+const FirstSection = () => {
+      const [visible, setVisible] = useState(true);
+
+
+    // const [isVisible, setIsVisible] = useState(true);
 
     const navigate = useNavigate();
 
@@ -16,55 +27,74 @@ const FirstSection = () => {
         navigate('/ThirdBYID');
     }
 
-
+    // useEffect(() => {
+    //     // Set a timeout to change visibility after 10 seconds (10000 ms)
+    //     const timer = setTimeout(() => {
+    //       setVisible(false);
+    //     }, 10000);
     useEffect(() => {
-        const timer = setInterval(() => {
-
-            console.log('isVisible', isVisible);
-            setIsVisible((prevIsVisible) => !prevIsVisible);
+        // Set a timeout to change visibility after 10 seconds (10000 ms)
+        const timer = setTimeout(() => {
+          setVisible(false);
         }, 5000);
+    
+        // Cleanup function to clear the timer if the component unmounts
+        return () => clearTimeout(timer);
+      }, []);
+    
 
-        return () => clearInterval(timer);
-    }, []);
+    // useEffect(() => {
+    //     const timer = setInterval(() => {
+
+    //         console.log('isVisible', isVisible);
+    //         setIsVisible((prevIsVisible) => !prevIsVisible);
+    //     }, 5000);
+
+    //     return () => clearInterval(timer);
+    // }, []);
 
 
     return (
-        <div className='main-first-section'>
-            <Container maxWidth="xl">
-                <div className='content'>
-                    <div className='text-container'>
-                        <img src='https://cdn.sanity.io/images/ti7si9cx/production/4377e92f4d96c34a723132275449070f0bf18d7f-637x281.svg?w=500&fm=webp&auto=format' alt='n' />
-                        <h2>BIG DATA AND INTELLIGENCE <br /> SOFTWARE FOR SECURITY ANALYTICS</h2>
-                        <ArrowForwardIcon onClick={transferToPage} style={{ fontSize: '30px', border: '1px solid #000', borderRadius: '50%', padding: '5px', cursor: 'pointer' }} />
+        <>
+            <div className='main-first-section'>
+                <Container maxWidth="xl">
+                    <div className='content'>
+                        <div className='text-container'>
+                            <img src='https://cdn.sanity.io/images/ti7si9cx/production/4377e92f4d96c34a723132275449070f0bf18d7f-637x281.svg?w=500&fm=webp&auto=format' alt='n' />
+                            <h2>BIG DATA AND INTELLIGENCE <br /> SOFTWARE FOR SECURITY ANALYTICS</h2>
+                            <ArrowForwardIcon onClick={transferToPage} style={{ fontSize: '30px', border: '1px solid #000', borderRadius: '50%', padding: '5px', cursor: 'pointer' }} />
+                        </div>
+                        <div className='header-img'>
+                            <img src='https://cdn.dribbble.com/userupload/4251441/file/original-614108275822ca2f6fbe3d54dde064a7.png?resize=752x' alt="mobile image not found" className='mainImage' />
+                        </div>
                     </div>
-                    <div className='header-img'>
-                        <img src='https://cdn.dribbble.com/userupload/4251441/file/original-614108275822ca2f6fbe3d54dde064a7.png?resize=752x' alt="mobile image not found" className='mainImage' />
-                    </div>
-                </div>
 
 
 
 
 
-            </Container>
+                </Container>
 
-            {/* <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 999 }}>
+
+                {/* <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 999 }}>
                 {isVisible && <LinearProgress />}
             </div> */}
 
 
-            {/* <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 999 }}>
+                {/* <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 999 }}>
                 {isVisible && <LinearProgress />}
             </div> */}
 
-            {/* <div className='LinearProgress' >
+                {/* <div className='LinearProgress' >
 
                     <Box sx={{ width: '100%' }}>
                         <LinearProgress />
                     </Box>
 
                 </div> */}
-        </div>
+            </div>
+            {/* {visible && <BlackLinearProgress />} */}
+        </>
     );
 }
 

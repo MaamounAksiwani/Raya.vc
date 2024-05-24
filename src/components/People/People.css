@@ -54,7 +54,7 @@
   opacity: 1;
   display: flex;
   flex-direction: column;
-  z-index: 1; /* Ensure overlay is above image */
+  z-index: 1;
 }
 
 .card-title {
@@ -62,8 +62,8 @@
   padding: 0px 25px;
   bottom: 0;
   left: 0;
-  opacity: 1; /* Ensure the title is always visible */
-  z-index: 200000; /* Ensure title is above overlay */
+  opacity: 1;
+  z-index: 200000;
 }
 
 .card-title h2 {
@@ -76,9 +76,6 @@
   color: #FFF;
 }
 
-.card:hover .card-title h2{
-  /* color: #000; */
-}
 
 .card:hover .card-image {
   transform: scale(1.1);
@@ -89,5 +86,5 @@
 }
 
 .card:hover .card-title {
-  opacity: 1; /* Ensure title remains visible on hover */
+  opacity: 1;
 }

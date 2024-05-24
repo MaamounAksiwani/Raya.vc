@@ -1,6 +1,5 @@
 
 import './ThirdSection.css';
-
 import React, { useEffect } from 'react';
 import WOW from 'wowjs';
 
@@ -15,10 +14,8 @@ const ThirdBYID = () => {
         <div className='about byID wow fadeInDown' data-wow-duration='1.5s'>
             <div className='main-container' style={{ textAlign: 'center' }}>
                 <div className='container'>
-                    <h2>DoorDash: delivering the future of local</h2>
-                    <p>
-                        Wednesday, December 09, 2020
-                    </p>
+                    <h2> DoorDash: delivering the future of local </h2>
+                    <p> Wednesday, December 09, 2020 </p>
                 </div>
             </div>
             <div className='main-container'>
@@ -26,7 +23,6 @@ const ThirdBYID = () => {
                     <div className='box-content img-header'>
                         <img src='https://cdn.sanity.io/images/ti7si9cx/production/cbe40a4512762659b2216928f404729e7bd572cd-2044x442.jpg?w=1382' alt='../' />
                     </div>
-
                     <div style={{ paddingTop: '25px' }}>
                         <h2 style={{ paddingBottom: '10px' }}>Empathy</h2>
                         <span>Building a company is a long journey that demands courage to make difficult and sometimes unpopular decisions. We have

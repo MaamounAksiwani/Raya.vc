@@ -19,7 +19,7 @@ const Navbar = () => {
       setAnimationClass('bounceOutUp');
       setTimeout(() => {
         setIsMenuOpen(false);
-      }, 2000);
+      }, 1000);
     } else {
       setIsMenuOpen(true);
       setAnimationClass('bounceInDown');
@@ -43,11 +43,29 @@ const Navbar = () => {
         <Container maxWidth='xl'>
           <div className='container-navbar'>
             <img src={rayaLogo} alt='Raya Logo' onClick={() => handleClick()} />
-            {isMenuOpen ? (
-              <HighlightOffIcon style={{ fontSize: '30px' }} className='burgerMenu' onClick={toggleMenu} />
+            <div style={{cursor:'pointer'}} onClick={toggleMenu}>
+              <div className={`nav-icon2 ${isMenuOpen ? 'open' : ''}`} id="nav-icon2">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            {/* {isMenuOpen ? (
+              <HighlightOffIcon
+                style={{ fontSize: '30px' }}
+                className={`burgerMenu ${animationClass}`}
+                onClick={toggleMenu}
+              />
             ) : (
-              <MenuIcon style={{ fontSize: '30px' }} className='burgerMenu' onClick={toggleMenu} />
-            )}
+              <MenuIcon
+                style={{ fontSize: '30px' }}
+                className={`burgerMenu ${animationClass}`}
+                onClick={toggleMenu}
+              />
+            )} */}
           </div>
         </Container>
       </div>
@@ -69,48 +87,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-
-// // import React, { useState } from 'react';
-// import { Container } from '@mui/material';
-// import './Navbar.css';
-// import MenuIcon from '@mui/icons-material/Menu';
-// import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-// import rayaLogo from '../../until/image-2-removebg-preview.png';
-
-// const Navbar = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const toggleMenu = () => {
-//     setIsOpen(!isOpen);
-//     console.log('HELLo');
-//   };
-
-//   return (
-//     <div style={{ position: 'fixed', width: '100%', zIndex: 1000 }}>
-//       <div style={{ background: '#000' }}>
-//         <Container maxWidth='xl'>
-//           <div className='container-navbar'>
-//             <img src={rayaLogo} alt='Raya Logo' />
-//            <div>
-//            <div id="nav-icon2" className={`nav-icon2 ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-//               <span></span>
-//               <span></span>
-//               <span></span>
-//               <span></span>
-//               <span></span>
-//               <span></span>
-//             </div>
-//            </div>
-//           </div>
-//         </Container>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;

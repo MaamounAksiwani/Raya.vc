@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './MenuContent.css';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import CloseIcon from '@mui/icons-material/Close';
 import WOW from 'wowjs';
 import { useNavigate } from 'react-router';
 
-const MenuContent = ({ setIsMenuOpen, isMenuOpen , setAnimationClass, animationClass }) => {
+const MenuContent = ({ setIsMenuOpen, isMenuOpen, setAnimationClass, animationClass }) => {
     const navigate = useNavigate();
-    // const [animationClass, setAnimationClass] = useState('bounceInDown');
-
     const toggle = () => {
         setAnimationClass('bounceOutUp');
         setTimeout(() => {
             setIsMenuOpen(false);
-            setAnimationClass('bounceInDown'); 
+            setAnimationClass('bounceInDown');
         }, 1000);
     };
 
@@ -59,10 +58,12 @@ const MenuContent = ({ setIsMenuOpen, isMenuOpen , setAnimationClass, animationC
 
     return (
         <>
+
+            {/* <HighlightOffIcon onClick={toggle} style={{ fontSize: '55px', cursor: 'pointer' }} /> */}
             {isMenuOpen && (
                 <div className={`body-menu-content wow ${animationClass}`} data-wow-duration='2s'>
                     <div>
-                        <HighlightOffIcon onClick={toggle} style={{ fontSize: '55px', cursor: 'pointer' }} />
+                      <CloseIcon size='large' className='closeIcon' onClick={toggle}/>
                         <h1 onClick={transferPage}>About</h1>
                         <h1 onClick={peoplePage}>People</h1>
                         <h1 onClick={partnershipsPage}>Partnerships</h1>

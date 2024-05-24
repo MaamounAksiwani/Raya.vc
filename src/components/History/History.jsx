@@ -15,7 +15,7 @@ const History = () => {
 
         <div className='about wow fadeInDown' data-wow-duration='1.5s'>
             <div className='main-container'>
-                <div className='container' style={{paddingBottom:'25px'}}>
+                <div className='container' style={{ paddingBottom: '25px' }}>
                     <h1>OUR HISTORY</h1>
                     <h2>The Early Years</h2>
                     <p>
@@ -30,7 +30,7 @@ const History = () => {
 
 
 
-            <div className='container' style={{paddingTop:'0'}}>
+            <div className='container' style={{ paddingTop: '0' }}>
 
                 <div className='images'>
 
@@ -44,7 +44,7 @@ const History = () => {
             </div>
 
 
-            <div className='main-container' style={{padding:'20px 0'}}>
+            <div className='main-container' style={{ padding: '20px 0' }}>
                 <div className='container'>
                     <div className='box-content'>
                         <h2>Momentum Grows</h2>
@@ -81,7 +81,7 @@ const History = () => {
             </div>
 
 
-            <div className='container'  style={{padding:'20px 0'}}>
+            <div className='container'>
                 <div className='box-content'>
                     <h2>Desktop Computing evolves and Biotech Booms
                     </h2>

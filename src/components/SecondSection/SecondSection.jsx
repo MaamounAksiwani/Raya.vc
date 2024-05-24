@@ -16,7 +16,7 @@ const SecondSection = () => {
                     <div className='text-container'>
                         
                         <img src='https://cdn.sanity.io/images/ti7si9cx/production/e0e6e2c8939008217eb76a3b3282ca75f3dc401a-74x24.svg?w=500&fm=webp&auto=format' alt='n'/>
-                        <h2>BIG DATA AssND INTELLIGENCE <br /> SOFTWARE FOR SECURITY ANALYTICS</h2>
+                        <h2>BIG DATA AND INTELLIGENCE <br /> SOFTWARE FOR SECURITY ANALYTICS</h2>
                         <ArrowForwardIcon onClick={transferToPage} style={{fontSize:'30px' , border:'1px solid #000' , borderRadius:'50%' , padding:'5px' , cursor:'pointer'}}/>
                     </div>
                     <div className='header-img'>
