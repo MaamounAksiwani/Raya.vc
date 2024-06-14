@@ -8,7 +8,12 @@ const About = () => {
         wow.init();
         window.scrollTo(0, 0)
       }, []);
-
+      useEffect(() => {
+        document.title = "About-us | Raya";
+        return () => {
+          document.title = "";
+        };
+      }, []);
     return (
         <div className='about wow fadeInDown' data-wow-duration='1.5s'>
             <div className='main-container' style={{ textAlign: 'center' }}>

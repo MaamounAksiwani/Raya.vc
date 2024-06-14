@@ -60,7 +60,8 @@ const FirstSection = () => {
                 <Container maxWidth="xl">
                     <div className='content'>
                         <div className='text-container'>
-                            <img src='https://cdn.sanity.io/images/ti7si9cx/production/4377e92f4d96c34a723132275449070f0bf18d7f-637x281.svg?w=500&fm=webp&auto=format' alt='n' />
+                            {/* <img src='https://cdn.sanity.io/images/ti7si9cx/production/4377e92f4d96c34a723132275449070f0bf18d7f-637x281.svg?w=500&fm=webp&auto=format' alt='n' /> */}
+                            <img src='https://static.udrus.com/assets/image/uniapp-logo.png' alt='n'/>
                             <h2>BIG DATA AND INTELLIGENCE <br /> SOFTWARE FOR SECURITY ANALYTICS</h2>
                             <ArrowForwardIcon onClick={transferToPage} style={{ fontSize: '30px', border: '1px solid #000', borderRadius: '50%', padding: '5px', cursor: 'pointer' }} />
                         </div>

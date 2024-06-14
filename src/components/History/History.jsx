@@ -8,7 +8,16 @@ const History = () => {
     useEffect(() => {
         const wow = new WOW.WOW();
         wow.init();
+        
     }, [])
+
+
+    useEffect(() => {
+        document.title = "Our-history | Raya";
+        return () => {
+          document.title = "";
+        };
+      }, []);
     return (
 
 

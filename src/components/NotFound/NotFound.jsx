@@ -7,6 +7,14 @@ const NotFound = () => {
         wow.init();
         window.scrollTo(0, 0)
     }, [])
+
+    useEffect(() => {
+        document.title = "Raya | Not-Found";
+        return () => {
+          document.title = "";
+        };
+      }, []);
+
     return (
         <div style={{ padding: '100px 0' , backgroundColor:'#eee' , height:'100vh' }} className='wow fadeInDown' data-wow-duration='1.5s'>
             <Container maxWidth="lg">

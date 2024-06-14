@@ -59,11 +59,11 @@ const MenuContent = ({ setIsMenuOpen, isMenuOpen, setAnimationClass, animationCl
     return (
         <>
 
-            <HighlightOffIcon onClick={toggle} style={{ fontSize: '55px', cursor: 'pointer' }} />
+            {/* <HighlightOffIcon onClick={toggle} style={{ fontSize: '55px', cursor: 'pointer' }} /> */}
             {isMenuOpen && (
                 <div className={`body-menu-content wow ${animationClass}`} data-wow-duration='2s'>
                     <div>
-                      <CloseIcon size='large' className='closeIcon' onClick={toggle}/>
+                      <CloseIcon  className='closeIcon' onClick={toggle}/>
                         <h1 onClick={transferPage}>About</h1>
                         <h1 onClick={peoplePage}>People</h1>
                         <h1 onClick={partnershipsPage}>Partnerships</h1>

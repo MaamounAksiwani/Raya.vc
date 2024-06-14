@@ -10,6 +10,13 @@ const ThirdBYID = () => {
         wow.init();
         window.scrollTo(0, 0)
     }, []);
+
+    useEffect(() => {
+        document.title = "Uniapp | Raya";
+        return () => {
+          document.title = "";
+        };
+      }, []);
     return (
         <div className='about byID wow fadeInDown' data-wow-duration='1.5s'>
             <div className='main-container' style={{ textAlign: 'center' }}>

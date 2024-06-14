@@ -63,6 +63,14 @@ const HomePage = () => {
         window.scrollTo(0, 0)
     }, [])
 
+
+    useEffect(() => {
+        document.title = "Home | Raya";
+        return () => {
+          document.title = "";
+        };
+      }, []);
+
     return (
         <>
         <div id='fullpage'>

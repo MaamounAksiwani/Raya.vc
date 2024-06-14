@@ -9,7 +9,12 @@ const Partnerships = () => {
         wow.init();
         window.scrollTo(0, 0)
     }, [])
-
+    useEffect(() => {
+        document.title = "Partner-ships | Raya ";
+        return () => {
+          document.title = "";
+        };
+      }, []);
 
     return (
         <div className='partnershipsPage wow fadeInDown' data-wow-duration='1.5s'>

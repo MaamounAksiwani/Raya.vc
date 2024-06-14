@@ -10,6 +10,12 @@ const People = () => {
         window.scrollTo(0, 0)
     }, [])
 
+    useEffect(() => {
+        document.title = "People | Raya";
+        return () => {
+          document.title = "";
+        };
+      }, []);
     const cardData = [
         { id: 4, title: 'Card 4', imageUrl: 'https://images.pexels.com/photos/15004155/pexels-photo-15004155/free-photo-of-portrait-of-a-man-with-a-stubble.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
         { id: 5, title: 'Card 5', imageUrl: 'https://images.pexels.com/photos/18199741/pexels-photo-18199741/free-photo-of-portrait-of-a-black-man.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
