@@ -99,15 +99,18 @@ const HomePage = () => {
             </div>
 
             <div class="section" data-percentage="80" data-centered="true">
-                <SecondSection />
+                {/* <SecondSection /> */}
+                <FirstSection />
             </div>
 
             <div class="section" data-percentage="80" data-centered="true">
-                <ThirdSection />
+                {/* <ThirdSection /> */}
+                <FirstSection />
             </div>
 
             <div className='section'>
-                <FourthSection />
+            <FirstSection />
+                {/* <FourthSection /> */}
             </div>
         </div>
 

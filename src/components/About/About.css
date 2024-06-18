@@ -13,32 +13,40 @@
   line-height: 1.5;
   font-size: 18px;
 }
+
 .main-container {
+  /* background-color: red; */
   margin-top: 30px;
   margin-bottom: 70px;
 }
+
 .container {
-  max-width: 768px;
+  /* max-width: 768px; */
   margin: 0 auto;
+  max-width: 992px;
   /* text-align: center; */
 }
+
 .container p {
   position: relative;
 }
+
 .container p::before {
   content: "";
   position: absolute;
   bottom: -50px;
-  left: 39%;
+  right: 425px;
   width: 150px;
   height: 1px;
   background-color: #000;
 }
+
 .about h2 {
   color: #000;
   font-weight: 500;
   margin-bottom: 5px;
 }
+
 .about span {
   font-size: 18px;
   margin-top: 0px;
@@ -48,11 +56,12 @@
 .box-content {
   margin: 40px 0;
 }
+
 .lastOne {
   position: relative;
 }
 
- .lastOne::after {
+.lastOne::after {
   content: "";
   position: absolute;
   bottom: -50px;
@@ -66,9 +75,17 @@
 @media only screen and (max-width: 768px) {
   .container {
     padding: 25px;
+
+    max-width: 768px;
+    /* background-color: red; */
     /* background-color: red; */
   }
-  .about{
+
+  .container p::before {
+    left:125px !important;
+  }
+
+  .about {
     padding: 50px 0;
   }
 
