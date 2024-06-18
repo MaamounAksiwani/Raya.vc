@@ -7,7 +7,7 @@ const SecondSection = () => {
     
     const navigate = useNavigate();
   const transferToPage = ()=>{
-        navigate('/ThirdBYID');
+        navigate('/uniapp');
     }
     return (
         <div className='main-first-section other'>

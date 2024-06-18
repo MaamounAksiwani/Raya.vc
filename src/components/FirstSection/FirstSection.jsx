@@ -25,7 +25,7 @@ const FirstSection = () => {
 
 
     const transferToPage = () => {
-        navigate('/ThirdBYID');
+        navigate('/uniapp');
     }
 
     // useEffect(() => {
