@@ -64,7 +64,7 @@ const FirstSection = () => {
                             <img src={uniappLogo} alt='n'/>
                             <h2>Empowering International Education</h2>
                             <h3>Simplify the Admission Process, Scale Up,<br/> and Diversify Campuses Worldwide</h3>
-                            <ArrowForwardIcon onClick={transferToPage} style={{ fontSize: '30px', border: '1px solid #000', borderRadius: '50%', padding: '5px', cursor: 'pointer' }} />
+                            <ArrowForwardIcon onClick={transferToPage} style={{ fontSize: '25px', border: '1px solid #000', borderRadius: '50%', padding: '5px', cursor: 'pointer' }} />
                         </div>
                         <div className='header-img'>
                             <img src={lpImg} alt="mobile image not found" className='mainImage' />

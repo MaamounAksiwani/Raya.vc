@@ -1,5 +1,7 @@
 .container-navbar {
   display: flex;
+  /* background-color: red;s */
+  /* z-index: 1000000000000000; */
   justify-content: space-between;
   align-items: center;
 }
@@ -10,9 +12,9 @@
   font-size: 220px;
 }
 .container-navbar img {
-  width: 180px;
+  width: 150px;
   cursor: pointer;
-  height: 100px;
+  height: 80px;
   /* background-color: red; */
 }
 

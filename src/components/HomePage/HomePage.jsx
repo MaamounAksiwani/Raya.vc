@@ -89,7 +89,7 @@ const HomePage = () => {
                         <div className="bottom-text">
                             <ArrowDownwardIcon
                                 className='arrow'
-                                style={{ fontSize: '30px', border: '1px solid #000', marginBottom: '30px', borderRadius: '50%', padding: '2px' }}
+                                style={{ fontSize: '35px', border: '1px solid #000', marginBottom: '30px', borderRadius: '50%', padding: '3px' }}
                                 onClick={moveNextSection}
                             />
                         </div>
