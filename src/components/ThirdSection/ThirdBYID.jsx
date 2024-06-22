@@ -23,7 +23,7 @@ const ThirdBYID = () => {
         <div className='about byID wow fadeInDown' data-wow-duration='1.5s'>
             <div className='main-container'>
                 <div className='container'>
-                    <div className='box-content img-header'>
+                    <div className='img-header'>
                         <img src={mainImage} alt='../' />
                     </div>
 
